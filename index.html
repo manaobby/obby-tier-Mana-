@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mana Obby Tier</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0f;
+    color: white;
+    min-height: 100vh;
+}
+
+.header {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    background: #111118;
+    border-bottom: 1px solid #292934;
+}
+
+.header h1 {
+    font-size: 32px;
+}
+
+.header p {
+    color: #999;
+    margin-top: 8px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.home {
+    text-align: center;
+}
+
+.home h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.home p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background: #5865f2;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #6975ff;
+}
+
+#tierPage {
+    display: none;
+}
+
+.backButton {
+    background: #25252f;
+    margin-bottom: 25px;
+}
+
+.backButton:hover {
+    background: #353542;
+}
+
+.tier {
+    margin-bottom: 20px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #292934;
+}
+
+.tierTitle {
+    padding: 15px 20px;
+    font-size: 22px;
+    font-weight: bold;
+    background: #171720;
+}
+
+.tierContent {
+    min-height: 100px;
+    padding: 20px;
+    background: #0f0f15;
+}
+
+.item {
+    display: inline-block;
+    padding: 12px 18px;
+    margin: 5px;
+    border-radius: 8px;
+    background: #20202b;
+    border: 1px solid #343442;
+}
+
+.footer {
+    text-align: center;
+    color: #666;
+    padding: 30px;
+    margin-top: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Mana Obby Tier</h1>
+    <p>Roblox Obby Tier List</p>
+</div>
+
+<div class="container">
+
+    <!-- หน้าแรก -->
+    <div id="homePage" class="home">
+        <h2>Mana Obby Tier</h2>
+        <p>ดูอันดับและ Tier ของ Obby ต่าง ๆ</p>
+
+        <button onclick="openTierList()">
+            ดู Tier List
+        </button>
+    </div>
+
+    <!-- หน้า Tier List -->
+    <div id="tierPage">
+
+        <button class="backButton" onclick="goHome()">
+            ← กลับหน้าแรก
+        </button>
+
+        <h2 style="margin-bottom:25px;">Obby Tier List</h2>
+
+        <div class="tier">
+            <div class="tierTitle">T1</div>
+            <div class="tierContent">
+                <div class="item">Coming Soon</div>
+            </div>
+        </div>
+
+        <div class="tier">
+            <div class="tierTitle">T2</div>
+            <div class="tierContent">
+                <div class="item">Coming Soon</div>
+            </div>
+        </div>
+
+        <div class="tier">
+            <div class="tierTitle">T3</div>
+            <div class="tierContent">
+                <div class="item">Coming Soon</div>
+            </div>
+        </div>
+
+        <div class="tier">
+            <div class="tierTitle">T4</div>
+            <div class="tierContent">
+                <div class="item">Coming Soon</div>
+            </div>
+        </div>
+
+        <div class="tier">
+            <div class="tierTitle">T5</div>
+            <div class="tierContent">
+                <div class="item">Coming Soon</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    Mana Obby Tier
+</div>
+
+<script>
+function openTierList() {
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("tierPage").style.display = "block";
+}
+
+function goHome() {
+    document.getElementById("tierPage").style.display = "none";
+    document.getElementById("homePage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
