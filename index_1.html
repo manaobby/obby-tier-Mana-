@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mana Obby Tier - อันดับและ Tier List ของ Obby ในเกม Roblox">
+<title>Mana Obby Tier</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans Thai', 'Sarabun', Tahoma, Arial, sans-serif;
+    background: #0b0b0f;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    background: #111118;
+    border-bottom: 1px solid #292934;
+}
+
+.header h1 {
+    font-size: 32px;
+}
+
+.header p {
+    color: #999;
+    margin-top: 8px;
+}
+
+.container {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px auto 0;
+    padding: 20px;
+}
+
+.home {
+    text-align: center;
+}
+
+.home h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.home p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+button,
+.linkButton {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 15px 25px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background: #5865f2;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+button:hover,
+.linkButton:hover {
+    transform: scale(1.05);
+    background: #6975ff;
+}
+
+button:focus-visible,
+.linkButton:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+.gameButton {
+    background: #e53935;
+}
+
+.gameButton:hover {
+    background: #f04b47;
+}
+
+.creatorButton {
+    background: #25252f;
+}
+
+.creatorButton:hover {
+    background: #353542;
+}
+
+#tierPage {
+    display: none;
+}
+
+.backButton {
+    background: #25252f;
+    margin-bottom: 25px;
+}
+
+.backButton:hover {
+    background: #353542;
+}
+
+.tier {
+    margin-bottom: 20px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #292934;
+}
+
+.tierTitle {
+    padding: 15px 20px;
+    font-size: 22px;
+    font-weight: bold;
+    background: #171720;
+    border-left: 8px solid var(--tier-color, #555);
+}
+
+.tierContent {
+    min-height: 100px;
+    padding: 20px;
+    background: #0f0f15;
+}
+
+.item {
+    display: inline-block;
+    padding: 12px 18px;
+    margin: 5px;
+    border-radius: 8px;
+    background: #20202b;
+    border: 1px solid #343442;
+}
+
+.item.empty {
+    color: #777;
+}
+
+.footer {
+    text-align: center;
+    color: #666;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .home h2 {
+        font-size: 24px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Mana Obby Tier</h1>
+    <p>Roblox Obby Tier List</p>
+</div>
+
+<div class="container">
+
+    <div id="homePage" class="home">
+        <h2>Mana Obby Tier</h2>
+        <p>ดูอันดับและ Tier ของ Obby ต่าง ๆ</p>
+
+        <div class="buttons">
+
+            <a
+                class="linkButton gameButton"
+                href="https://www.roblox.com/th/games/97304285217576/unnamed"
+                target="_blank"
+                rel="noopener noreferrer">
+                🎮 เข้าเกม
+            </a>
+
+            <button type="button" onclick="openTierList()">
+                🏆 ดู Tier List
+            </button>
+
+            <a
+                class="linkButton creatorButton"
+                href="https://www.roblox.com/th/users/4178893863/profile"
+                target="_blank"
+                rel="noopener noreferrer">
+                👤 ผู้สร้างเกม
+            </a>
+
+        </div>
+    </div>
+
+    <div id="tierPage">
+
+        <button type="button" class="backButton" onclick="goHome()">
+            ← กลับหน้าแรก
+        </button>
+
+        <h2 style="margin-bottom:25px;">Obby Tier List</h2>
+
+        <div id="tierList"></div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    Mana Obby Tier
+</div>
+
+<script>
+// เพิ่มชื่อ Obby ในแต่ละ Tier ที่นี่ เช่น items: ["Obby A", "Obby B"]
+const tiers = [
+    { name: "T1", color: "#e53935", items: [] },
+    { name: "T2", color: "#fb8c00", items: [] },
+    { name: "T3", color: "#fdd835", items: [] },
+    { name: "T4", color: "#43a047", items: [] },
+    { name: "T5", color: "#1e88e5", items: [] }
+];
+
+function renderTiers() {
+    const list = document.getElementById("tierList");
+    list.innerHTML = "";
+
+    tiers.forEach(function (tier) {
+        const box = document.createElement("div");
+        box.className = "tier";
+
+        const title = document.createElement("div");
+        title.className = "tierTitle";
+        title.style.setProperty("--tier-color", tier.color);
+        title.textContent = tier.name;
+
+        const content = document.createElement("div");
+        content.className = "tierContent";
+
+        const names = tier.items.length ? tier.items : ["Coming Soon"];
+        names.forEach(function (name) {
+            const item = document.createElement("div");
+            item.className = "item" + (tier.items.length ? "" : " empty");
+            item.textContent = name;
+            content.appendChild(item);
+        });
+
+        box.appendChild(title);
+        box.appendChild(content);
+        list.appendChild(box);
+    });
+}
+
+function showPage() {
+    const isTier = location.hash === "#tier";
+    document.getElementById("homePage").style.display = isTier ? "none" : "block";
+    document.getElementById("tierPage").style.display = isTier ? "block" : "none";
+    window.scrollTo(0, 0);
+}
+
+function openTierList() {
+    location.hash = "tier";
+}
+
+function goHome() {
+    history.pushState("", document.title, location.pathname + location.search);
+    showPage();
+}
+
+window.addEventListener("hashchange", showPage);
+window.addEventListener("popstate", showPage);
+
+renderTiers();
+showPage();
+</script>
+
+</body>
+</html>
